@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Tcp Demo | 首页</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="icon" href="/assets/img/photo.jpg">
+    <meta name="description" content=" ">
+    
+    <link rel="preload" href="/assets/css/0.styles.7385e7f5.css" as="style"><link rel="preload" href="/assets/js/app.624cd73c.js" as="script"><link rel="preload" href="/assets/js/2.91d313f1.js" as="script"><link rel="preload" href="/assets/js/35.21db3964.js" as="script"><link rel="prefetch" href="/assets/js/10.544f3d8e.js"><link rel="prefetch" href="/assets/js/11.2406fe55.js"><link rel="prefetch" href="/assets/js/12.e60864e4.js"><link rel="prefetch" href="/assets/js/13.6ce0296e.js"><link rel="prefetch" href="/assets/js/14.1afd1aa6.js"><link rel="prefetch" href="/assets/js/15.72005716.js"><link rel="prefetch" href="/assets/js/16.803bdc41.js"><link rel="prefetch" href="/assets/js/17.fd9c467e.js"><link rel="prefetch" href="/assets/js/18.67404b97.js"><link rel="prefetch" href="/assets/js/19.5692ceb6.js"><link rel="prefetch" href="/assets/js/20.19526d10.js"><link rel="prefetch" href="/assets/js/21.8d4a610a.js"><link rel="prefetch" href="/assets/js/22.70b6609e.js"><link rel="prefetch" href="/assets/js/23.818e0ce3.js"><link rel="prefetch" href="/assets/js/24.828e869b.js"><link rel="prefetch" href="/assets/js/25.63d01e3f.js"><link rel="prefetch" href="/assets/js/26.f6fd203a.js"><link rel="prefetch" href="/assets/js/27.e1556b5e.js"><link rel="prefetch" href="/assets/js/28.0c532b1c.js"><link rel="prefetch" href="/assets/js/29.d5589208.js"><link rel="prefetch" href="/assets/js/3.3889365a.js"><link rel="prefetch" href="/assets/js/30.2dd8dc8a.js"><link rel="prefetch" href="/assets/js/31.9f077fe7.js"><link rel="prefetch" href="/assets/js/32.61668ed1.js"><link rel="prefetch" href="/assets/js/33.df5dd658.js"><link rel="prefetch" href="/assets/js/34.7350d3af.js"><link rel="prefetch" href="/assets/js/36.3ebd5542.js"><link rel="prefetch" href="/assets/js/4.4bf6fbd6.js"><link rel="prefetch" href="/assets/js/5.657a8b44.js"><link rel="prefetch" href="/assets/js/6.bc125e13.js"><link rel="prefetch" href="/assets/js/7.6154d72f.js"><link rel="prefetch" href="/assets/js/8.315dfa5c.js"><link rel="prefetch" href="/assets/js/9.c73e29d1.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.7385e7f5.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">首页</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/bi-ji/" class="nav-link">
+  笔记
+</a></div><div class="nav-item"><a href="/dai-ma/" class="nav-link router-link-active">
+  代码
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/bi-ji/" class="nav-link">
+  笔记
+</a></div><div class="nav-item"><a href="/dai-ma/" class="nav-link router-link-active">
+  代码
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Go</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/dai-ma/10go/tcp.html" aria-current="page" class="active sidebar-link">Tcp Demo</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/dai-ma/10go/tcp.html#tcpserver" class="sidebar-link">TcpServer</a></li><li class="sidebar-sub-header"><a href="/dai-ma/10go/tcp.html#tcpclient" class="sidebar-link">TcpClient</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="tcp-demo"><a href="#tcp-demo" class="header-anchor">#</a> Tcp Demo</h1> <h2 id="tcpserver"><a href="#tcpserver" class="header-anchor">#</a> TcpServer</h2> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;bytes&quot;</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;log&quot;</span>
+	<span class="token string">&quot;net&quot;</span>
+	<span class="token string">&quot;runtime&quot;</span>
+	<span class="token string">&quot;strconv&quot;</span>
+	<span class="token string">&quot;time&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment">/**
+来自远程ip: 127.0.0.1:10568 的消息: hello!i am client !
+来自远程ip: 127.0.0.1:10568 的消息:
+来自远程ip: 127.0.0.1:10568 的消息:
+
+conn关闭后有两次空白输出，是因为三次握手机制 accept到空白内容了
+*/</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	addr<span class="token punctuation">,</span> err <span class="token operator">:=</span> net<span class="token punctuation">.</span><span class="token function">ResolveTCPAddr</span><span class="token punctuation">(</span><span class="token string">&quot;tcp&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;127.0.0.1:9088&quot;</span><span class="token punctuation">)</span>
+	<span class="token function">dealErrorWithExist</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+	tcpListen<span class="token punctuation">,</span> err <span class="token operator">:=</span> net<span class="token punctuation">.</span><span class="token function">ListenTCP</span><span class="token punctuation">(</span><span class="token string">&quot;tcp&quot;</span><span class="token punctuation">,</span> addr<span class="token punctuation">)</span>
+	<span class="token function">dealErrorWithExist</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;tcp服务器端启动:  &quot;</span><span class="token punctuation">,</span> addr<span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token keyword">for</span> <span class="token punctuation">{</span>
+		conn<span class="token punctuation">,</span> err <span class="token operator">:=</span> tcpListen<span class="token punctuation">.</span><span class="token function">Accept</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+			<span class="token keyword">continue</span>
+		<span class="token punctuation">}</span>
+		<span class="token comment">//加go 编程高性能并发服务器端  </span>
+		<span class="token keyword">go</span> <span class="token function">handlerConn</span><span class="token punctuation">(</span>conn<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">handlerConn</span><span class="token punctuation">(</span>conn net<span class="token punctuation">.</span>Conn<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">//**********************************  </span>
+	<span class="token keyword">defer</span> fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;当前用户 &quot;</span><span class="token punctuation">,</span> conn<span class="token punctuation">.</span><span class="token function">RemoteAddr</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">&quot; 主动断开链接！&quot;</span><span class="token punctuation">)</span>
+	<span class="token keyword">defer</span> conn<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//正常链接情况下，handlerConn不会释放出来到这里 当客户端强制断开，才会return到这里，吧当前conn关闭  </span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;新链接了一个客户端&quot;</span><span class="token punctuation">,</span> conn<span class="token punctuation">.</span><span class="token function">RemoteAddr</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token comment">//**********************************  </span>
+	<span class="token comment">//获取客户端信息 info，并返回 info+服务器时间  </span>
+	<span class="token keyword">var</span> buf <span class="token punctuation">[</span><span class="token number">1024</span><span class="token punctuation">]</span><span class="token builtin">byte</span>
+	<span class="token keyword">for</span> <span class="token punctuation">{</span>
+		readSize<span class="token punctuation">,</span> err <span class="token operator">:=</span> conn<span class="token punctuation">.</span><span class="token function">Read</span><span class="token punctuation">(</span>buf<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+		<span class="token function">dealErrorWithReturn</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+		remoteAddr <span class="token operator">:=</span> conn<span class="token punctuation">.</span><span class="token function">RemoteAddr</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		gorid <span class="token operator">:=</span> <span class="token function">GetGoroutineID</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;协程id: &quot;</span><span class="token operator">+</span>strconv<span class="token punctuation">.</span><span class="token function">FormatUint</span><span class="token punctuation">(</span>gorid<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">&quot; 来自远程ip:&quot;</span><span class="token punctuation">,</span> remoteAddr<span class="token punctuation">,</span> <span class="token string">&quot; 的消息:&quot;</span><span class="token punctuation">,</span> <span class="token function">string</span><span class="token punctuation">(</span>buf<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span>readSize<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+		<span class="token boolean">_</span><span class="token punctuation">,</span> err2 <span class="token operator">:=</span> conn<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span><span class="token function">string</span><span class="token punctuation">(</span>buf<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span>readSize<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot; &quot;</span> <span class="token operator">+</span> time<span class="token punctuation">.</span><span class="token function">Now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+		<span class="token comment">//一定要执行下面的return 才能监听到客户端主动断开，服务器端对本次conn进行close处理 dealErrorWithReturn不能达到这个效果。</span>
+		<span class="token keyword">if</span> err2 <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+			<span class="token keyword">return</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">GetGoroutineID</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">uint64</span> <span class="token punctuation">{</span>
+	b <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">)</span>
+	runtime<span class="token punctuation">.</span><span class="token function">Stack</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+	b <span class="token operator">=</span> bytes<span class="token punctuation">.</span><span class="token function">TrimPrefix</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span><span class="token string">&quot;goroutine &quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+	b <span class="token operator">=</span> b<span class="token punctuation">[</span><span class="token punctuation">:</span>bytes<span class="token punctuation">.</span><span class="token function">IndexByte</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span> <span class="token string">' '</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+	n<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> strconv<span class="token punctuation">.</span><span class="token function">ParseUint</span><span class="token punctuation">(</span><span class="token function">string</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">)</span>
+	<span class="token keyword">return</span> n
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">dealErrorWithExist</span><span class="token punctuation">(</span>err <span class="token builtin">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">//有异常会停止进程  </span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		log<span class="token punctuation">.</span><span class="token function">Fatal</span><span class="token punctuation">(</span><span class="token string">&quot;运行异常&quot;</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">dealErrorWithReturn</span><span class="token punctuation">(</span>err <span class="token builtin">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">//有异常会停止进程  </span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br></div></div><h2 id="tcpclient"><a href="#tcpclient" class="header-anchor">#</a> TcpClient</h2> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;log&quot;</span>
+	<span class="token string">&quot;net&quot;</span>
+	<span class="token string">&quot;os&quot;</span>
+	<span class="token string">&quot;strconv&quot;</span>
+	<span class="token string">&quot;time&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	clientStop <span class="token operator">:=</span> <span class="token boolean">false</span>
+	<span class="token keyword">var</span> buf <span class="token punctuation">[</span><span class="token number">1024</span><span class="token punctuation">]</span><span class="token builtin">byte</span>
+	<span class="token comment">//关于buf大小设置 参考：https://segmentfault.com/q/1010000021544230</span>
+
+	addr<span class="token punctuation">,</span> err <span class="token operator">:=</span> net<span class="token punctuation">.</span><span class="token function">ResolveTCPAddr</span><span class="token punctuation">(</span><span class="token string">&quot;tcp&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;127.0.0.1:9088&quot;</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		log<span class="token punctuation">.</span><span class="token function">Fatal</span><span class="token punctuation">(</span><span class="token string">&quot;运行异常&quot;</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	dialTCP<span class="token punctuation">,</span> err <span class="token operator">:=</span> net<span class="token punctuation">.</span><span class="token function">DialTCP</span><span class="token punctuation">(</span><span class="token string">&quot;tcp&quot;</span><span class="token punctuation">,</span> <span class="token boolean">nil</span><span class="token punctuation">,</span> addr<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		log<span class="token punctuation">.</span><span class="token function">Fatal</span><span class="token punctuation">(</span><span class="token string">&quot;运行异常&quot;</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">var</span> i <span class="token builtin">int64</span> <span class="token operator">=</span> <span class="token number">1</span>
+	<span class="token keyword">for</span> <span class="token punctuation">{</span>
+		clientStop <span class="token operator">=</span> <span class="token boolean">false</span> <span class="token comment">//实时更新系统是否接到关闭信号 可能是通过界面传递到某个配置文件或表字段里</span>
+		<span class="token comment">//到这里说明和服务器链接成功</span>
+		<span class="token boolean">_</span><span class="token punctuation">,</span> err2 <span class="token operator">:=</span> dialTCP<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span><span class="token string">&quot;hello!i am client msg!&quot;</span> <span class="token operator">+</span> strconv<span class="token punctuation">.</span><span class="token function">FormatInt</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+		<span class="token comment">//此时不会结束for 一次写失败可以继续，看具体业务对异常信息的处理机制</span>
+		<span class="token keyword">if</span> err2 <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+			dialTCP<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+			log<span class="token punctuation">.</span><span class="token function">Fatal</span><span class="token punctuation">(</span>err2<span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+		<span class="token comment">//获取服务器端返回的信息</span>
+		read<span class="token punctuation">,</span> err3 <span class="token operator">:=</span> dialTCP<span class="token punctuation">.</span><span class="token function">Read</span><span class="token punctuation">(</span>buf<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+		<span class="token comment">//从服务器端获取信息失败，就要及时打断进程</span>
+		<span class="token keyword">if</span> err3 <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+			dialTCP<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+			log<span class="token punctuation">.</span><span class="token function">Fatal</span><span class="token punctuation">(</span>err3<span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+
+		<span class="token keyword">if</span> clientStop <span class="token punctuation">{</span>
+			<span class="token comment">// 程序通过 信号量 clientStop 控制客户端链接是否关闭</span>
+			dialTCP<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+			os<span class="token punctuation">.</span><span class="token function">Exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;客户端主动从服务器第&quot;</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> <span class="token string">&quot;次获取到的信息:&quot;</span><span class="token punctuation">,</span> <span class="token function">string</span><span class="token punctuation">(</span>buf<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span>read<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+		time<span class="token punctuation">.</span><span class="token function">Sleep</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span><span class="token function">Duration</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">*</span> time<span class="token punctuation">.</span>Second<span class="token punctuation">)</span>
+		i<span class="token operator">++</span>
+	<span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br></div></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.624cd73c.js" defer></script><script src="/assets/js/2.91d313f1.js" defer></script><script src="/assets/js/35.21db3964.js" defer></script>
+  </body>
+</html>

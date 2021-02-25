@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Docker安装nginx并设置挂载目录到宿主机 | 首页</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="icon" href="/assets/img/photo.jpg">
+    <meta name="description" content=" ">
+    
+    <link rel="preload" href="/assets/css/0.styles.7385e7f5.css" as="style"><link rel="preload" href="/assets/js/app.624cd73c.js" as="script"><link rel="preload" href="/assets/js/2.91d313f1.js" as="script"><link rel="preload" href="/assets/js/22.70b6609e.js" as="script"><link rel="prefetch" href="/assets/js/10.544f3d8e.js"><link rel="prefetch" href="/assets/js/11.2406fe55.js"><link rel="prefetch" href="/assets/js/12.e60864e4.js"><link rel="prefetch" href="/assets/js/13.6ce0296e.js"><link rel="prefetch" href="/assets/js/14.1afd1aa6.js"><link rel="prefetch" href="/assets/js/15.72005716.js"><link rel="prefetch" href="/assets/js/16.803bdc41.js"><link rel="prefetch" href="/assets/js/17.fd9c467e.js"><link rel="prefetch" href="/assets/js/18.67404b97.js"><link rel="prefetch" href="/assets/js/19.5692ceb6.js"><link rel="prefetch" href="/assets/js/20.19526d10.js"><link rel="prefetch" href="/assets/js/21.8d4a610a.js"><link rel="prefetch" href="/assets/js/23.818e0ce3.js"><link rel="prefetch" href="/assets/js/24.828e869b.js"><link rel="prefetch" href="/assets/js/25.63d01e3f.js"><link rel="prefetch" href="/assets/js/26.f6fd203a.js"><link rel="prefetch" href="/assets/js/27.e1556b5e.js"><link rel="prefetch" href="/assets/js/28.0c532b1c.js"><link rel="prefetch" href="/assets/js/29.d5589208.js"><link rel="prefetch" href="/assets/js/3.3889365a.js"><link rel="prefetch" href="/assets/js/30.2dd8dc8a.js"><link rel="prefetch" href="/assets/js/31.9f077fe7.js"><link rel="prefetch" href="/assets/js/32.61668ed1.js"><link rel="prefetch" href="/assets/js/33.df5dd658.js"><link rel="prefetch" href="/assets/js/34.7350d3af.js"><link rel="prefetch" href="/assets/js/35.21db3964.js"><link rel="prefetch" href="/assets/js/36.3ebd5542.js"><link rel="prefetch" href="/assets/js/4.4bf6fbd6.js"><link rel="prefetch" href="/assets/js/5.657a8b44.js"><link rel="prefetch" href="/assets/js/6.bc125e13.js"><link rel="prefetch" href="/assets/js/7.6154d72f.js"><link rel="prefetch" href="/assets/js/8.315dfa5c.js"><link rel="prefetch" href="/assets/js/9.c73e29d1.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.7385e7f5.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">首页</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/bi-ji/" class="nav-link router-link-active">
+  笔记
+</a></div><div class="nav-item"><a href="/dai-ma/" class="nav-link">
+  代码
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/bi-ji/" class="nav-link router-link-active">
+  笔记
+</a></div><div class="nav-item"><a href="/dai-ma/" class="nav-link">
+  代码
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Go</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Docker</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Jenkins</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Linux</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Mysql</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Nexus</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Nginx</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/bi-ji/nginx/dockeran-zhuang-nginx.html" aria-current="page" class="active sidebar-link">Docker安装nginx并设置挂载目录到宿主机</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Others</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Redis</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Redisson</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Shell</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Ubuntu</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vmware</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="docker安装nginx并设置挂载目录到宿主机"><a href="#docker安装nginx并设置挂载目录到宿主机" class="header-anchor">#</a> Docker安装nginx并设置挂载目录到宿主机</h3> <p>查询nginx版本<br> <code>docker search nginx</code><br>
+拉取nginx1.16版本镜像<br> <code>docker pull nginx:1.16</code><br>
+启动镜像生成容器<br> <code>docker run --name nginx-test -p 80:80 -d nginx</code><br>
+创建挂载目录<br> <code>mkdir -p /data/static /data/nginx/conf</code><br>
+复制容器里的conf到宿主机。6dd4380ba708为CONTAINER ID<br> <code>docker cp 6dd4380ba708:/etc/nginx/nginx.conf /data/nginx/conf/nginx.conf</code><br>
+停止容器<br> <code>docker stop 6dd4380ba708</code><br>
+删除容器<br> <code>docker rm 6dd4380ba708</code><br>
+重新启动一个有挂载目录的镜像<br> <code>docker run -d -p 80:80 --name visi-nginx -v /data/static:/usr/share/nginx/html -v /data/nginx/conf/nginx.conf:/etc/nginx/nginx.conf -v /data/nginx/logs:/var/log/nginx nginx</code></p> <blockquote><p>-p 80:80： 将容器的 80 端口映射到主机的 80 端口。<br>
+--name visi-nginx：将容器命名为 visi-nginx。<br>
+/data/static:/usr/share/nginx/html：将我们自己创建的 /data/static 目录挂载到容器的 /usr/share/nginx/html。<br>
+/data/nginx/conf/nginx.conf:/etc/nginx/nginx.conf：将我们自己创建的 nginx.conf 挂载到容器的 /etc/nginx/nginx.conf。<br>
+/data/nginx/logs:/var/log/nginx：将我们自己创建的 logs 挂载到容器的 /var/log/nginx。</p></blockquote> <p>打开nginx.conf<br> <code>sudo vi /data/nginx/conf/nginx.conf</code><br>
+内容如下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>user  nginx;
+worker_processes  1;
+
+error_log  /var/log/nginx/error.log warn;
+pid        /var/run/nginx.pid;
+
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main  '$remote_addr - $remote_user [$time_local] &quot;$request&quot; '
+                      '$status $body_bytes_sent &quot;$http_referer&quot; '
+                      '&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    keepalive_timeout  65;
+
+    #gzip  on;
+
+    include /etc/nginx/conf.d/*.conf;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br></div></div><p>在http{}里的最后面加入</p> <blockquote><p>站点目录为上面自己nginx,把所有的静态网页放到这里就可以访问了。</p></blockquote> <div class="language- line-numbers-mode"><pre class="language-text"><code>#下面是server虚拟主机的配置
+ server
+  {
+    listen 80;#监听端口
+    server_name localhost;#域名
+    index index.html index.htm;
+    root /usr/share/nginx/html;#站点目录
+  }
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>把前端的静态文件放到/data/staic 下就可以访问了。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/bi-ji/nexus/da-jian-si-you-mavencang-ku.html" class="prev">
+        使用nexus搭建maven私服
+      </a></span> <span class="next"><a href="/bi-ji/others/da-jian-shi-shi-shi-pin.html">
+        实时显示视频流
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.624cd73c.js" defer></script><script src="/assets/js/2.91d313f1.js" defer></script><script src="/assets/js/22.70b6609e.js" defer></script>
+  </body>
+</html>
